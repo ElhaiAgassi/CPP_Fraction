@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<div dir="rtl" lang="en">
 
 # Fraction
 Write a class named Fraction that represents a fraction of two integers. Overload the following operators for this class:
@@ -43,7 +41,4 @@ Write a class named Fraction that represents a fraction of two integers. Overloa
 ולכן כל שינוי שתעשו בקבצים הקיימים יימחק.
 
 בהצלחה
-</div>
-=======
-# CPP_Fraction
->>>>>>> 0752cf10b5143336208526da91441103e164c47c
+
