@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div dir="rtl" lang="en">
 
 # Fraction
@@ -43,3 +44,6 @@ Write a class named Fraction that represents a fraction of two integers. Overloa
 
 בהצלחה
 </div>
+=======
+# CPP_Fraction
+>>>>>>> 0752cf10b5143336208526da91441103e164c47c
