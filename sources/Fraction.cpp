@@ -136,3 +136,11 @@ std::istream& operator>>(std::istream& is, Fraction& fraction) {
     is >> fraction.numerator >> slash >> fraction.denominator;
     return is;
 }
+// Accessor functions for numerator and denominator
+int Fraction::getNumerator() const {
+    return numerator;
+}
+
+int Fraction::getDenominator() const {
+    return denominator;
+}

@@ -69,6 +69,44 @@ TEST_CASE("Fraction Increment/Decrement")
     CHECK(result.getNumerator() == -1);
     CHECK(result.getDenominator() == 4);
 }
+
+TEST_CASE("Fraction Addition")
+{
+Fraction f1(1, 2);
+Fraction f2(3, 4);
+Fraction result = f1 + f2;
+CHECK(result.getNumerator() == 5);
+CHECK(result.getDenominator() == 4);
+}
+
+TEST_CASE("Fraction Subtraction")
+{
+Fraction f1(3, 4);
+Fraction f2(1, 2);
+Fraction result = f1 - f2;
+CHECK(result.getNumerator() == 1);
+CHECK(result.getDenominator() == 4);
+}
+
+TEST_CASE("Fraction Multiplication")
+{
+Fraction f1(1, 2);
+Fraction f2(3, 4);
+Fraction result = f1 * f2;
+CHECK(result.getNumerator() == 3);
+CHECK(result.getDenominator() == 8);
+}
+
+TEST_CASE("Fraction Division")
+{
+Fraction f1(1, 2);
+Fraction f2(3, 4);
+Fraction result = f1 / f2;
+CHECK(result.getNumerator() == 4);
+CHECK(result.getDenominator() == 6);
+}
+
+
 // TEST_CASE("Fraction Output Stream")
 // {
 //     Fraction f1(3, 4);
