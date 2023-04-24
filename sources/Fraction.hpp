@@ -1,73 +1,79 @@
-#ifndef FRACTION_H
-#define FRACTION_H
+#pragma once
 
 #include <iostream>
-
-class Fraction
+namespace ariel
 {
-public:
-    Fraction();
-    Fraction(int numerator, int denominator);
 
-    // Arithmetic operators
-    Fraction operator+(const Fraction &other) const;
-    Fraction operator-(const Fraction &other) const;
-    Fraction operator*(const Fraction &other) const;
-    Fraction operator/(const Fraction &other) const;
+    class Fraction
+    {
+    public:
+        Fraction();
+        Fraction(int numerator, int denominator);
 
-    // Added overload functions for arithmetic operators with double
-    friend Fraction operator+(const Fraction &fraction, double value);
-    friend Fraction operator-(const Fraction &fraction, double value);
-    friend Fraction operator*(const Fraction &fraction, double value);
-    friend Fraction operator/(const Fraction &fraction, double value);
-    // Add the other way
-    friend Fraction operator+(double value, const Fraction &fraction);
-    friend Fraction operator-(double value, const Fraction &fraction);
-    friend Fraction operator*(double value, const Fraction &fraction);
-    friend Fraction operator/(double value, const Fraction &fraction);
+        // Arithmetic operators
+        Fraction operator+(const Fraction &other) const;
+        Fraction operator-(const Fraction &other) const;
+        Fraction operator*(const Fraction &other) const;
+        Fraction operator/(const Fraction &other) const;
 
-    // Comparison operators
-    bool operator==(const Fraction &other) const;
-    bool operator!=(const Fraction &other) const;
-    bool operator>(const Fraction &other) const;
-    bool operator<(const Fraction &other) const;
-    bool operator>=(const Fraction &other) const;
-    bool operator<=(const Fraction &other) const;
+        // Added overload functions for arithmetic operators with double
+        friend Fraction operator+(const Fraction &fraction, double value);
+        friend Fraction operator-(const Fraction &fraction, double value);
+        friend Fraction operator*(const Fraction &fraction, double value);
+        friend Fraction operator/(const Fraction &fraction, double value);
+        // Add the other way
+        friend Fraction operator+(double value, const Fraction &fraction);
+        friend Fraction operator-(double value, const Fraction &fraction);
+        friend Fraction operator*(double value, const Fraction &fraction);
+        friend Fraction operator/(double value, const Fraction &fraction);
 
-    // Added overload functions for comparison operators with double
-    friend bool operator>(double value, const Fraction &fraction);
-    friend bool operator<(const Fraction &fraction, double value);
-    friend bool operator>=(const Fraction &fraction, double value);
-    friend bool operator<=(const Fraction &fraction, double value);
+        // Comparison operators
+        bool operator==(const Fraction &other) const;
+        bool operator!=(const Fraction &other) const;
+        bool operator>(const Fraction &other) const;
+        bool operator<(const Fraction &other) const;
+        bool operator>=(const Fraction &other) const;
+        bool operator<=(const Fraction &other) const;
 
-    // Increment/Decrement operators
-    Fraction &operator++();   // Prefix increment
-    Fraction operator++(int); // Postfix increment
-    Fraction &operator--();   // Prefix decrement
-    Fraction operator--(int); // Postfix decrement
+        // Added overload functions for comparison operators with double
+        friend bool operator>(const Fraction &fraction, double value);
+        friend bool operator<(const Fraction &fraction, double value);
+        friend bool operator>=(const Fraction &fraction, double value);
+        friend bool operator<=(const Fraction &fraction, double value);
 
-    // Output/Input stream operators
-    friend std::ostream &operator<<(std::ostream &os, const Fraction &fraction);
-    friend std::istream &operator>>(std::istream &is, Fraction &fraction);
+        // Increment/Decrement operators
+        Fraction &operator++();   // Prefix increment
+        Fraction operator++(int); // Postfix increment
+        Fraction &operator--();   // Prefix decrement
+        Fraction operator--(int); // Postfix decrement
 
-    // Accessor functions for numerator and denominator
-    int getNumerator() const;
-    int getDenominator() const;
+        // Output/Input stream operators
+        friend std::ostream &operator<<(std::ostream &os, const Fraction &fraction);
+        friend std::istream &operator>>(std::istream &is, Fraction &fraction);
 
-private:
-    int numerator;
-    int denominator;
+        // Accessor functions for numerator and denominator
+        int getNumerator() const;
+        int getDenominator() const;
 
-    // Helper functions
-};
+    private:
+        int numerator;
+        int denominator;
 
-// // Implementation of accessor functions for numerator and denominator
-// int Fraction::numerator const {
-//     return numerator;
-// }
+        // Helper function
+        Fraction reduce();
+    };
+    
+    int gcd(int a, int b);
 
-// int Fraction::denominator() const {
-//     return denominator;
-// }
+    // // Implementation of accessor functions for numerator and denominator
 
-#endif // FRACTION_H
+    // int Fraction::numerator() const
+    // {
+    //     return numerator;
+    // }
+    // int Fraction::denominator() const
+    // {
+    //     return denominator;
+    // }
+
+}
